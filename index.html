@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <script>
+    // Função para validar o formulário
+    function validarFormulario(event) {
+            event.preventDefault();  // Impede o envio do formulário para poder validar
+
+            // Pega os valores dos campos
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("password").value;
+            
+
+
+            // Validação do e-mail (verifica se o campo não está vazio e se o e-mail é válido)
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (email === "" || !emailRegex.test(email)) {
+                document.getElementById("erroMensagem").innerText = "Por favor, insira um e-mail válido.";
+                document.getElementById("erro").style.display = "block";  // Exibe o alerta
+
+                return false;
+            }
+
+            // Validação da senha (verifica se a senha tem pelo menos 6 caracteres)
+            if (senha === "" || senha.length < 6) {
+                document.getElementById("erroMensagem").innerText = "A senha deve ter pelo menos 6 caracteres.";
+                document.getElementById("erro").style.display = "block";  // Exibe o alerta
+
+
+                setTimeout(function() {
+                    document.getElementById("erro").style.display = "none";  // Esconde o alerta após 3 segundos
+                }, 2000);
+
+                return false;
+            }
+
+            
+
+            // Se tudo estiver correto, o formulário pode ser enviado
+            alert("Formulário enviado com sucesso!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form onsubmit="validarFormulario(event)">
+            <h2> Olá, bem-vindo a AGIO!</h2>
+            <div class="input-email">
+                <input id="email" placeholder="Email" type="email" required>
+                <img width="30" height="30" src="https://img.icons8.com/material-two-tone/24/new-post.png"
+                    alt="new-post" class="imagem-email"/>
+            </div>
+            <div class="input-senha">
+                <input id="password" placeholder="Senha" type="password" required>
+                <img width="30" height="30" src="https://img.icons8.com/material-two-tone/24/password--v1.png"
+                    alt="password--v1" class="imagem-senha"/>
+                <a href="senha.html"> Esqueci minha senha</a>
+            </div>
+            <button type="submit" class="botao"> Entrar </button>
+
+            <div class="register">
+                <p>Não está cadastrado? <a href="cadastro.html">Cadastrar</a></p>
+            </div>
+
+        </form>
+
+        <div id="erro" class="erro" style="display:none;">
+            <span id="erroMensagem"></span>
+        </div>
+
+    </div>
+</body>
+
+</html>
