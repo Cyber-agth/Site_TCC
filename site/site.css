@@ -1,0 +1,118 @@
+/* Reset básico */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #c1cffd;
+    background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+header h1 {
+    font-size: 2rem;
+}
+
+/* Navegação */
+nav ul {
+    background-color: #333333;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #3359ff;
+}
+
+/* Conteúdo principal */
+main {
+    padding: 2rem;
+    background-color: white;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+main h2 {
+    margin-bottom: 1rem;
+    color: #0073e6;
+}
+
+main p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos da seção principal */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+.container_edu {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.container_edu img {
+    width: 17%;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.container_edu img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Rodapé */
+footer {
+    background-color: #222222;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
